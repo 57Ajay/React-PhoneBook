@@ -3,6 +3,7 @@ import "./Phonebook.css";
 const  Phonebook= ()=>{
     const [persons, setPersons] = useState([
         { name: "Arto Hellas" },
+        { name: "Ada Lovelace" },
     ]);
     
     const [newName, setNewName] = useState("");
@@ -18,6 +19,11 @@ const  Phonebook= ()=>{
                 </div>
             </form>
             <h2 className="phonebook-title">Numbers</h2>
+            <div>
+                {persons.map(person => (
+                    <p key={person.name}>{person.name}</p>
+                ))}
+            </div>
         </div>
     );
 };
