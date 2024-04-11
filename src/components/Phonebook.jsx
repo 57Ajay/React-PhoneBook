@@ -46,10 +46,10 @@ const  Phonebook= ()=>{
             <SearchFilter persons={persons}/>
             <form onSubmit={addPerson}>
                 <div>
-                    name: <input onChange={handleNameChange} type="text"/>
+                    Name: <input className="name-input" onChange={handleNameChange} type="text"/>
                 </div>
                 <div>
-                    number: <input type="text" onChange={handleNumberChange}/>
+                    Number: <input className="number-input" type="text" onChange={handleNumberChange}/>
                 </div>
                 <div>
                     <button type="submit">add</button>

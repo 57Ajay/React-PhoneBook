@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import './SearchFilter.css';
 const SearchFilter = ({ persons }) => {
     const [searched, setSearched] = useState([]);
   const HandleChange = (e) => {
@@ -15,14 +16,14 @@ const SearchFilter = ({ persons }) => {
   };
 
   return (
-    <div>
+    <div className="search-filter-container">
       <div>
-        <input type="text" onChange={HandleChange} placeholder="Search for Contacts" />
+        <input className="search-filter-input" type="text" onChange={HandleChange} placeholder="Search for Contacts" />
       </div>
-      <div>
+      <div className="search-filter-results">
         <ul>
           {searched.map((person) => (
-            <li key={person.name}>{person.name}</li>
+            <li className="search-filter-result" key={person.name}>{person.name}</li>
           ))}
         </ul>
       </div>
@@ -35,3 +36,4 @@ SearchFilter.propTypes = {
 };
 
 export default SearchFilter;
+
