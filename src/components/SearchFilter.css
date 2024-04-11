@@ -11,6 +11,10 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 200px;
+  background-color: #dbb49d;
+  color: #050505;
+  font-weight: bold;
+  font-style: oblique;
 }
 
 .search-filter-results {
