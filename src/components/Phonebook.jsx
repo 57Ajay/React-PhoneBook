@@ -4,7 +4,6 @@ import "./SearchFilter";
 import SearchFilter from "./SearchFilter";
 const  Phonebook= ()=>{
     const [persons, setPersons] = useState([
-        {},
         { name: "Arto Hellas", number: "040-123456" },
         { name: "Ada Lovelace", number: "39-44-5323523" }, 
         { name: "Dan Abramov", number: "12-43-234567" }, 
@@ -46,19 +45,20 @@ const  Phonebook= ()=>{
             <SearchFilter persons={persons}/>
             <form onSubmit={addPerson}>
                 <div>
-                    Name: <input className="name-input" onChange={handleNameChange} type="text"/>
+                    Name: <input className="name-input" onChange={handleNameChange} type="text" placeholder="Ajay Upadhyay" required />
                 </div>
                 <div>
-                    Number: <input className="number-input" type="text" onChange={handleNumberChange}/>
+                    Number: <input className="number-input" type="text" onChange={handleNumberChange} placeholder="+91-123-456-7890" required />
                 </div>
                 <div>
                     <button type="submit">add</button>
                 </div>
             </form>
             <h2 className="phonebook-title">Contacts</h2>
-            <div>
+            <div className="contacts">
+                
                 {persons.map(person => (
-                    <p key={persons.indexOf(person)}>{person.name}{" --- "}{person.number}</p>
+                    <p key={persons.indexOf(person)}>{person.name}{" | "}{person.number}</p>
                 ))}
             </div>
         </div>
