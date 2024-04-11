@@ -14,14 +14,17 @@ const  Phonebook= ()=>{
     const [newNumber, setNewNumber] = useState("");
     const addPerson = (event) => {
       event.preventDefault();
+    if (!newName || !newNumber) {
+    alert(`Already added name and number or one of them to the phonebook.
+    Change the name and number to add new Contact`);
+    return;
+  }
       const personObject = {
         name: newName,
         number: newNumber
       };
-      if (persons.some((person) => person.name === newName && person.number === newNumber)) {
-        alert(`${newName} & ${newNumber} is already added to phonebook`);
-        setNewName("");
-        setNewNumber("");
+      if (persons.find((person) => person.name === newName || person.number === newNumber)) {
+        alert(`${newName} &/or ${newNumber} is already added to phonebook`);
         return;
       } else {
         setPersons(persons.concat(personObject));
@@ -45,10 +48,10 @@ const  Phonebook= ()=>{
             <SearchFilter persons={persons}/>
             <form onSubmit={addPerson}>
                 <div>
-                    Name: <input className="name-input" onChange={handleNameChange} type="text" placeholder="Ajay Upadhyay" required />
+                    Name: <input className="name-input" onChange={handleNameChange} type="text" placeholder="Ajay Upadhyay" required min={3} maxLength={20} />
                 </div>
                 <div>
-                    Number: <input className="number-input" type="text" onChange={handleNumberChange} placeholder="+91-123-456-7890" required />
+                    Number: <input className="number-input" type="number" onChange={handleNumberChange} placeholder="+91-123-456-7890" required min={7} />
                 </div>
                 <div>
                     <button type="submit">add</button>
