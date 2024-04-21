@@ -1,9 +1,21 @@
 # React Phonebook App
 ## App Link : https://phonebook57.netlify.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple Phonebook app built with React. It allows users to add new contacts with their name and phone number, and search for existing contacts.
 
-Currently, two official plugins are available:
+## Components
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Phonebook.jsx
+
+The main component of the app. It manages the state for the list of contacts (`persons`) and the input fields for adding new contacts (`newName` and `newNumber`). It includes event handler functions for adding new contacts (`addPerson`), updating the name input field (`handleNameChange`), and updating the number input field (`handleNumberChange`). The component also renders the search filter component (`SearchFilter`) and the list of contacts.
+
+### SearchFilter.jsx
+
+A component responsible for filtering and displaying the list of contacts based on a search query. It accepts the list of contacts (`persons`) as a prop and manages the state for the search query (`searched`). It includes an event handler function (`HandleChange`) to update the search query based on user input. The component renders an input field for searching contacts and displays the filtered results.
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/57ajay/React-PhoneBook
